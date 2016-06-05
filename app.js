@@ -98,14 +98,15 @@ var messageArray  = [
   {display:"", file:"console", message:"I suppose I should include those social links..."},
 
   {display:"", file:"index", message:"<div class = 'icons'>"},
-  {display:"", file:"index", message:'<a href = "https://github.com/kedirech/"><i class="fa fa-github-square" aria-hidden="true"></i></a>'},
+  {display:"", file:"index", message:'<a href = "http://brackcarmony.com"><i class="fa fa-globe" aria-hidden="true"></i></a>'},
+  {display:"", file:"index", message:'<a href = "https://github.com/kedirech/"><i class="fa fa-github" aria-hidden="true"></i></a>'},
   {display:"", file:"index", message:'<a href = "https://www.facebook.com/brackcarmony"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>'},
-  {display:"", file:"index", message:'<a href = "https://twitter.com/BrackCarmony"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>'},
   {display:"", file:"index", message:'<a href = "https://github.com/Kedirech/self-build"><i class="fa fa-code" aria-hidden="true"></i></a>'},
   {display:"", file:"index", message:'<a href = "mailto:brackcarmony@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>'},
   {display:"", file:"index", message:"</div> "},
   {display:"", file:"style", message:'.icons a{color:ΩblackΩ}'},
   {display:"", file:"style", message:'.icons a:hover{color:ΩblueΩ;'},
+  {display:"", file:"style", message:'transition:.1s;}'},
   {display:"", file:"style", message:'cursor:ΩpointerΩ;}'},
 
   {display:"", file:"style", message:'.icons{'},
