@@ -80,7 +80,7 @@ var messageArray  = [
   {file:"index",message:'<a href = "https://github.com/kedirech/"><i class="fa fa-github-square" aria-hidden="true"></i></a>'},
   {file:"index",message:'<a href = "https://www.facebook.com/brackcarmony"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>'},
   {file:"index",message:'<a href = "https://twitter.com/BrackCarmony"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>'},
-  {file:"index",message:"</div> "},
+
 
   {file:"style",message:'.icons{'},
   {file:"style",message:'font-size:10vw;'},
@@ -88,8 +88,14 @@ var messageArray  = [
   {file:"style",message:'width:50%;'},
   {file:"style",message:'justify-content:space-around;'},
   {file:"style",message:'}'},
+  {file:"style",message:'.icons a{color:black}'},
 
-  {file:"console",message:"Feel free to poke around the source code"},
+  {file:"console",message:"Feel free to poke around the source code..."},
+  {file:"index",message:'<a href = "https://github.com/Kedirech/self-build"><i class="fa fa-code" aria-hidden="true"></i></a>'},
+  {file:"console",message:"or shoot me an email."},
+  {file:"index",message:'<a href = "mailto:brackcarmony@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>'},
+  {file:"console",message:"comments are always appreciated."},
+  {file:"index",message:"</div> "},
 
 ]
 
