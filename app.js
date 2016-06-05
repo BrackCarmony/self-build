@@ -106,7 +106,7 @@ var messageArray  = [
   {display:"", file:"index", message:"</div> "},
   {display:"", file:"style", message:'.icons a{color:ΩblackΩ}'},
   {display:"", file:"style", message:'.icons a:hover{color:ΩblueΩ;'},
-  {display:"", file:"style", message:'transition:.1s;}'},
+  {display:"", file:"style", message:'transition:.1s;'},
   {display:"", file:"style", message:'cursor:ΩpointerΩ;}'},
 
   {display:"", file:"style", message:'.icons{'},
