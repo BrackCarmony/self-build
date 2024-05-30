@@ -1,3 +1,10 @@
+var pet, events;
+var description = 'Asking ChatPGT'
+
+pet = getRandomAnimal()
+events = getRandomEvents()
+description = getEventDescription(pet, events);
+
 var messageArray  = [
   {display:"", file:"console", message:"This is a test of the emergency website broadcast system"},
   {display:"", file:"console", message:"Seems like there`s not much here."},
@@ -25,6 +32,19 @@ var messageArray  = [
   {display:"", file:"index", message:"<h1>Brack Carmony</h1>"},
   {display:"", file:"index", message:"<h2>Web Developer</h2>"},
   {display:"", file:"index", message:"<p>I`m a math nerd turned programmer.  I`m really not all that fond of talking about myself.  But I saw <a href='http://strml.net/'>this webpage</a> and thought it looked pretty fun to try and emulate.  Sure I probably shouldn`t link to a site that does this same sort of thing better than me...  There`s a reason I don`t work in marketing. </p>"},
+  {display:"", file:"index", message:"<p>Part of me just really wants to throw lorem ibpem text in here instead of comming up with something unique to say... </p>"},
+  {display:"", file:"index", message:"<p>I know, what if I had ChatGPT come up with the next bit... is this random idea I had from years ago able to handle some dynamic content do you think? </p>"},
+  {display:"", file:"index", message:"<p>Let`s see if I can get it to work... </p>"},
+  {display:"", file:"console", message:"Well I don't want to expose my API key here.  Which means I could call my server to make the request, it's a bit cheaty, but I make the rules around here anyway."},
+  {display:"", file:"console", message:"First things first though.  I need to make this work with non static data."},
+  {display:"", file:"javascript", message:"function getRandomAnimal(){ let options = ['cat', 'bird', 'dog', 'fish', 'lizard', 'snake', 'hamster', 'gerbil', 'parrot'] let index = Math.floor(Math.random()*options.length); return options[index]; }"},
+  {display:"", file:"javascript", message:"function getRandomEvents(){ let options = ['dream', 'breakfast', 'lunch', 'dinner', 'wedding', 'christmas', 'birthday'] let index = Math.floor(Math.random()*options.length); return options[index]; }"},
+
+  {display:"", file:"index", message:`<p>What random pet are you? ... pet = ${pet} </p>`},
+  {display:"", file:"index", message:`<p>What are you describing?... events = ${events} </p>`},
+
+  {display:"", file:"index", message:`<p>${getDescription()} </p>`, findMe:true},
+  {display:"", file:"index", message:`<p> Thanks for that ChatGPT, I'll be sure to credit you in the comments. </p>`},
   {display:"", file:"style", message:"*{box-sizing:borderbox}"},
   {display:"wide", file:"style", message:"p{padding-left:30px;"},
   {display:"tall", file:"style", message:"p{"},
@@ -134,6 +154,7 @@ var lineIndex=0;
 var letterIndex=0;
 var target;
 
+
 var cons = document.getElementById("console");
 var display = window.innerHeight>window.innerWidth?"tall":"wide";
 var fileType = messageArray[0].file;
@@ -142,6 +163,41 @@ var files = {
   console:"console -- ",
   style:"",
   javascript:""
+}
+
+let functions = {
+
+}
+
+function getRandomAnimal(){ 
+  let options = ['cat', 'bird', 'dog', 'fish', 'lizard', 'snake', 'hamster', 'gerbil', 'parrot'] 
+  let index = Math.floor(Math.random()*options.length); 
+  return options[index]; 
+}
+
+function getRandomEvents(){ 
+  let options = ['dream', 'breakfast', 'lunch', 'dinner', 'wedding', 'christmas', 'birthday'] 
+  let index = Math.floor(Math.random()*options.length); 
+  return options[index]; 
+}
+
+function getDescription(){
+  return description;
+}
+
+function getEventDescription(animal, events){ 
+  fetch('/api/chat/'+`You are a ${animal} describe your ${events}`)
+    .then(response=>response.text())
+    .then(data=>{
+      console.log(`spy: data`, data); // BURN
+      messageArray.forEach(message=>{
+        if (message.findMe){
+          message.message = "<p> "+ data + "</p>";
+        }
+      })
+      description = data 
+    });
+    return 'asking chatgpt';
 }
 
 function nextLetter() {
