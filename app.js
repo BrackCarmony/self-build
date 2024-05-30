@@ -174,7 +174,7 @@ function nextLetter() {
     fileType = messageArray[lineIndex].file;
     files.console += "<br/>" + messageArray[lineIndex].file + " -- "
     target = (messageArray[lineIndex].file ==="console"? null: document.getElementById(messageArray[lineIndex].file));
-    spd = spd * .9;
+    spd = spd * .95;
     setTimeout(nextLetter,spd*100)
   }else{
     setTimeout(nextLetter,spd)
