@@ -39,6 +39,21 @@ var messageArray  = [
   {display:"", file:"console", message:"First things first though.  I need to make this work with non static data."},
   {display:"", file:"javascript", message:"function getRandomAnimal(){ let options = ['cat', 'bird', 'dog', 'fish', 'lizard', 'snake', 'hamster', 'gerbil', 'parrot'] let index = Math.floor(Math.random()*options.length); return options[index]; }"},
   {display:"", file:"javascript", message:"function getRandomEvents(){ let options = ['dream', 'breakfast', 'lunch', 'dinner', 'wedding', 'christmas', 'birthday'] let index = Math.floor(Math.random()*options.length); return options[index]; }"},
+  {display:"", file:"javascript", message:`function getEventDescription(animal, events){ 
+    fetch('/api/chat/'+\`You are a \${animal} describe your \${events}\`)
+      .then(response=>response.text())
+      .then(data=>{
+        messageArray.forEach(message=>{
+          if (message.findMe){
+            message.message = "<p> "+ data + "</p>";
+          }
+        })
+        description = data 
+      });
+      return 'asking chatgpt';
+  }`},
+
+  
 
   {display:"", file:"index", message:`<p>What random pet are you? ... pet = ${pet} </p>`},
   {display:"", file:"index", message:`<p>What are you describing?... events = ${events} </p>`},
@@ -112,7 +127,7 @@ var messageArray  = [
   {display:"", file:"style", message:'.background-image{'},
 
   {display:"", file:"style", message:'width:Ω100%Ω;'},
-  {display:"", file:"style", message:'width:Ωcalc(100% / 3)Ω;'},
+  {display:"", file:"style", message:'width:Ωcalc(99% / 3)Ω;'},
   {display:"", file:"style", message:'display:Ωinline-blockΩ;}'},
 
   {display:"", file:"console", message:"I suppose I should include those social links..."},
